@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <title>Profile</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <link href="/static/styles.css" rel="stylesheet">
+        <link href="https://github.hubspot.com/odometer/themes/odometer-theme-minimal.css" rel="stylesheet"> <!-- source: https://github.hubspot.com/odometer/docs/welcome/ -->
+        <script src="https://github.hubspot.com/odometer/odometer.js"></script> <!-- source: https://github.hubspot.com/odometer/docs/welcome/ -->
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+    </head>
+
+    <body>
+
+
+        <form action="/" method="post">
+            <div class="topnav">
+                <div class="topnav-right">
+                    <div class="element">
+                        <button name="logout" id="logout" type="submit">Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="center">
+            <p id="odometer" class="odometer">0</p><br>
+            <p class='goal' id="goal" value="{{goal}}">Goal: {{ goal }}</p>
+
+
+                <button id="show-goal" class="set-goal">Set Goal</button>
+
+
+            <button id="show-task">Crate new task</button>
+
+            <br>
+
+
+            <form action="/profile" method="post">
+            <table>
+            <div class="task-table" >
+            {% for task in tasks %}
+                <tr class="table-row">
+                    <td><b>{{ task.task_name }}</b></td>
+                    <td><b>{{ task.task_points }}&diams;</b></td>
+                    <td><button class="delete"  name="delete" type="submit" value="{{task.id}}"><span>&times;</span></button></td>
+                    <td><button class="check"  name="done" type="submit" value="{{task.id}}">&check;</button></td>
+                </tr>
+            {%endfor%}
+            <br>
+            </div>
+            </table>
+            </form>
+
+
+
+            <form action="/profile" method="post">
+                <div class="setgoal_popup">
+                    <div class="close-btn">&times;</div>
+                    <div class="form">
+                        <h2>Set Goal</h2>
+                        <div class="form-element">
+                            <input   min="1" step="1" type="number" name="goal" id="goal" placeholder="Please enter your goal" autocomplete="off" >
+                        </div>
+                        <div class="form-element">
+                            <button  name="setgoal-button" type="submit">Set Goal</button>
+                        </div>
+                        </div>
+                    </div>
+                 </div>
+             </form>
+
+
+
+
+
+
+            <form action="/profile" method="post">
+            <div class="task_popup">
+                <div class="close-btn">&times;</div>
+                <div class="form">
+                    <h2>Add task</h2>
+                    <div class="form-element">
+                        <label for="task">Task</label>
+                        <input type="text" name="task-name" id="task-name" placeholder="Please enter the task" autocomplete="off" >
+                    </div>
+                    <div class="form-element">
+                        <label for="point">Points</label><br>
+                        <input   min="1" step="1" type="number" name="task-points" id="task-points" placeholder="Set the score you will earn when you complete the task">
+                    </div>
+                    <div class="form-element">
+                        <button name="addtask-button" type="submit">Add Task</button>
+                    </div>
+                </div>
+            </div>
+            </form>
+
+
+
+        </div>
+        <p name="score" id="score" value="{{score}}"></p>
+
+    </body>
+
+
+
+    <script>
+
+        document.querySelector("#show-task").addEventListener("click", function(){
+                    document.querySelector(".task_popup").classList.add("active");
+                });
+                document.querySelector(".task_popup .close-btn").addEventListener("click", function(){
+                    document.querySelector(".task_popup").classList.remove("active");
+                });
+
+        document.querySelector("#show-goal").addEventListener("click", function(){
+                    document.querySelector(".setgoal_popup").classList.add("active");
+                });
+                document.querySelector(".setgoal_popup .close-btn").addEventListener("click", function(){
+                    document.querySelector(".setgoal_popup").classList.remove("active");
+                });
+    </script>
+
+
+    <script>
+        setTimeout(function(){
+        var element = document.getElementById("score");
+        var score = element.getAttribute("value");
+        odometer.innerHTML = score;
+        }, 100);
+
+    </script>
+
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+
+    <script>
+        let element_score = document.getElementById("score");
+        let score = element_score.getAttribute("value");
+        console.log(score)
+        let element_goal = document.getElementById("goal");
+        let goal = element_goal.getAttribute("value");
+        console.log(goal)
+
+
+        if (+score >= +goal)
+        {
+            console.log("if Runs")
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },});
+        }
+    </script>
+
+
+
+
+

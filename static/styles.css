@@ -1,0 +1,459 @@
+.title{
+    font-size: 90px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.info{
+    font-size: 20px;
+    margin: auto;
+    width: 45%;
+    padding: 10px;
+}
+.start-now{
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.start-now:hover{
+    background-color: #333;
+    color: white;
+
+}
+.start-now:active{
+    background-color: #666;
+}
+.center{
+    text-align: center;
+}
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+.topnav .element {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+.topnav .element:hover {
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+}
+.topnav-right {
+    float: right;
+}
+.login_popup{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(1.25);
+    width:380px;
+    padding:20px 30px;
+    background:#fff;
+    box-shadow:2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    transition:top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.login_popup.active{
+    top:50%;
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    transition:top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.login_popup .close-btn{
+    position: absolute;
+    top:10px;
+    right:10px;
+    width:15px;
+    background:#888;
+    color:#eee;
+    text-align:center;
+    line-height:15px;
+    border-radius:15px;
+    cursor: pointer;
+}
+.login_popup .form h2{
+    text-align:center;
+    color: #222;
+    margin:10px 0px 20px;
+    font-size:25px;
+}
+.login_popup .form .form-element {
+    margin:15px 0px;
+}
+.login_popup .form .form-element label{
+    font-size:16px;
+    color:#222;
+}
+.login_popup .form .form-element input[type="text"],
+.login_popup .form .form-element input[type="password"]{
+    margin-top:5px;
+    display:block;
+    width:100%;
+    outline:none;
+    border:1px solid #aaa;
+    border-radius:5px;
+}
+.login_popup .form .form-element button{
+    width:100%;
+    height:40px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background:#222;
+    color:#f5f5f5;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.signup_popup{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(1.25);
+    width:380px;
+    padding:20px 30px;
+    background:#fff;
+    box-shadow:2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    transition:top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.signup_popup.active{
+    top:50%;
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    transition:top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.signup_popup .close-btn{
+    position: absolute;
+    top:10px;
+    right:10px;
+    width:15px;
+    background:#888;
+    color:#eee;
+    text-align:center;
+    line-height:15px;
+    border-radius:15px;
+    cursor: pointer;
+}
+.signup_popup .form h2{
+    text-align:center;
+    color: #222;
+    margin:10px 0px 20px;
+    font-size:25px;
+}
+.signup_popup .form .form-element {
+    margin:15px 0px;
+}
+.signup_popup .form .form-element label{
+    font-size:16px;
+    color:#222;
+}
+.signup_popup .form .form-element input[type="text"],
+.signup_popup .form .form-element input[type="password"]{
+    margin-top:5px;
+    display:block;
+    width:100%;
+    outline:none;
+    border:1px solid #aaa;
+    border-radius:5px;
+}
+.signup_popup .form .form-element button{
+    width:100%;
+    height:40px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background:#222;
+    color:#f5f5f5;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+.success {
+    padding: 20px;
+    background-color: #36f443;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtn:hover {
+    color: black;
+  }
+
+
+  .odometer{
+    font-size: 80px;
+    margin-top: 10px;
+    border:3px solid #aaa;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom:5px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+
+  .task_popup{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(1.25);
+    width:380px;
+    padding:20px 30px;
+    background:#fff;
+    box-shadow:2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    transition:top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.task_popup.active{
+    top:50%;
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    transition:top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.task_popup .close-btn{
+    position: absolute;
+    top:10px;
+    right:10px;
+    width:15px;
+    background:#888;
+    color:#eee;
+    text-align:center;
+    line-height:15px;
+    border-radius:15px;
+    cursor: pointer;
+}
+.task_popup .form h2{
+    text-align:center;
+    color: #222;
+    margin:10px 0px 20px;
+    font-size:25px;
+}
+.task_popup .form .form-element {
+    margin:15px 0px;
+}
+.task_popup .form .form-element label{
+    font-size:16px;
+    color:#222;
+}
+.task_popup .form .form-element input[type="text"],
+.task_popup .form .form-element input[type="password"]{
+    margin-top:5px;
+    display:block;
+    width:100%;
+    outline:none;
+    border:1px solid #aaa;
+    border-radius:5px;
+}
+.task_popup .form .form-element button{
+    width:100%;
+    height:40px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background:#222;
+    color:#f5f5f5;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+
+.topnav #logout {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 6px 8px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.goal{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.set-goal , #show-task{
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 1px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.set-goal:hover, #show-task:hover{
+    background-color: #333;
+    color: white;
+
+}
+.set-goal:active, #show-task:active{
+    background-color: #666;
+}
+
+
+
+.setgoal_popup{
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity:0;
+    transform:translate(-50%,-50%) scale(1.25);
+    width:380px;
+    padding:20px 30px;
+    background:#fff;
+    box-shadow:2px 2px 5px 5px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    transition:top 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.setgoal_popup.active{
+    top:50%;
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    transition:top 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, transform 200ms ease-in-out 0ms;
+}
+.setgoal_popup .close-btn{
+    position: absolute;
+    top:10px;
+    right:10px;
+    width:15px;
+    background:#888;
+    color:#eee;
+    text-align:center;
+    line-height:15px;
+    border-radius:15px;
+    cursor: pointer;
+}
+.setgoal_popup .form h2{
+    text-align:center;
+    color: #222;
+    margin:10px 0px 20px;
+    font-size:25px;
+}
+.setgoal_popup .form .form-element {
+    margin:15px 0px;
+}
+.setgoal_popup .form .form-element label{
+    font-size:16px;
+    color:#222;
+}
+.setgoal_popup .form .form-element input[type="text"],
+.setgoal_popup .form .form-element input[type="password"]{
+    margin-top:5px;
+    display:block;
+    width:100%;
+    outline:none;
+    border:1px solid #aaa;
+    border-radius:5px;
+}
+.setgoal_popup .form .form-element button{
+    width:100%;
+    height:40px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    background:#222;
+    color:#f5f5f5;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+table{
+    margin-top: 0px;
+    background-color: #ddd;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    font-size: 20px;
+    width: 500px;
+    border:2px solid #aaa;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 10px;
+    border-spacing: 200px;
+  }
+  td {
+    border: 1px solid #aaa;
+}
+
+.check{
+    border: none;
+    border-radius: 50%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #ddd;
+    transition: background-color 0.5s ease;
+
+}
+
+
+
+.check:hover{
+    background-color: #36f443;
+}
+
+
+.delete{
+    border: none;
+    border-radius: 50%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #ddd;
+    transition:background-color 0.5s ease;
+}
+
+
+
+.delete:hover{
+    background-color: #f44336;
+}
+
+
